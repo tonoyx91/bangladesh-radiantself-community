@@ -99,8 +99,8 @@
 
         /* About Section */
         .about {
-            padding: 4rem 2rem;
-            background: var(--accent-color);
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
         }
 
         .about-grid {
@@ -108,53 +108,108 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-images {
             display: grid;
             grid-template-rows: repeat(2, 1fr);
-            gap: 1rem;
+            gap: 2rem;
         }
 
-        .about-images img {
+        .about-img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 300px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
 
         .about-text h2 {
             color: var(--primary-color);
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
         }
 
-        .about-text p {
+        .about-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .mission-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .mission-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-card p {
             color: var(--text-color);
             line-height: 1.6;
-            margin-bottom: 1rem;
         }
 
         /* Stats Section */
         .stats {
-            padding: 4rem 2rem;
-            background: var(--bg-color);
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
         }
 
         .stats-container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .stats-content {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .stat-cards {
+            display: grid;
+            grid-template-rows: repeat(2, 1fr);
             gap: 2rem;
         }
 
         .stat-card {
-            text-align: center;
+            background: white;
             padding: 2rem;
-            background: var(--accent-color);
-            border-radius: 10px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
@@ -162,10 +217,35 @@
             transform: translateY(-5px);
         }
 
-        .stat-card h3 {
-            font-size: 3rem;
-            color: var(--primary-color);
+        .stat-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
             margin-bottom: 1rem;
+        }
+
+        .stat-card h3 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .stat-card p {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .stats-image {
+            position: relative;
+        }
+
+        .stats-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
 
         /* Footer */
@@ -246,15 +326,26 @@
     <!-- About Section -->
     <section class="about">
         <div class="about-grid">
-            <div class="about-images">
-                <!-- Images will be added -->
-            </div>
             <div class="about-text">
                 <h2>Our Mission</h2>
-                <p class="highlight">Youth against AMR</p>
-                <p>Leading the fight against antimicrobial resistance through education, awareness, and action.</p>
-                <p class="highlight">Youth against Zoonoses</p>
-                <p>Combating zoonotic diseases through community engagement and cross-sector collaboration.</p>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Youth against AMR</h3>
+                    <p>Leading the fight against antimicrobial resistance through education, awareness, and action.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <i class="fas fa-viruses"></i>
+                    </div>
+                    <h3>Youth against Zoonoses</h3>
+                    <p>Combating zoonotic diseases through community engagement and cross-sector collaboration.</p>
+                </div>
+            </div>
+            <div class="about-images">
+                <img src="assets/about-1.jpg" alt="BRC Activity 1" class="about-img">
+                <img src="assets/about-2.jpg" alt="BRC Activity 2" class="about-img">
             </div>
         </div>
     </section>
@@ -262,13 +353,26 @@
     <!-- Stats Section -->
     <section class="stats">
         <div class="stats-container">
-            <div class="stat-card">
-                <h3>12</h3>
-                <p>Institutions</p>
-            </div>
-            <div class="stat-card">
-                <h3>365</h3>
-                <p>Participants</p>
+            <div class="stats-content">
+                <div class="stat-cards">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-building-user"></i>
+                        </div>
+                        <h3 class="counter" data-target="12">0</h3>
+                        <p>Institutions</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="counter" data-target="365">0</h3>
+                        <p>Participants</p>
+                    </div>
+                </div>
+                <div class="stats-image">
+                    <img src="assets/community.jpg" alt="BRC Community" class="stats-img">
+                </div>
             </div>
         </div>
     </section>
@@ -298,7 +402,7 @@
     </footer>
 
     <script>
-        // Simple image slider functionality
+        // Image slider functionality
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
 
@@ -318,6 +422,45 @@
 
         // Change slide every 5 seconds
         setInterval(nextSlide, 5000);
+
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // The lower the slower
+
+        function startCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                
+                const updateCount = () => {
+                    const increment = target / speed;
+                    
+                    if (count < target) {
+                        count += increment;
+                        counter.innerText = Math.ceil(count);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+
+                updateCount();
+            });
+        }
+
+        // Start counters when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        document.querySelector('.stats').querySelectorAll('.counter').forEach(counter => {
+            observer.observe(counter);
+        });
     </script>
 </body>
 </html>
