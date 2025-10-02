@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners & Collaborators - BRC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Include the same base styles as index.html */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a4f8b;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --accent-color: #f5f5f5;
+        }
+
+        /* Navigation styles (same as index.html) */
+        .navbar {
+            background: var(--bg-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Partners Styles */
+        .partners-container {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .partners-container h1 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .partner-placeholder {
+            background: var(--accent-color);
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .partner-placeholder i {
+            font-size: 3rem;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="assets/BRC_LOGO.png" alt="BRC Logo">
+                <h1>BRC</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="executive-teams.html">Executive Teams</a>
+                <a href="news.html">News</a>
+                <a href="partners.html">Partners & Collaborators</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Partners Content -->
+    <div class="partners-container">
+        <h1>Our Partners & Collaborators</h1>
+        <p>Partner logos and information will be added here.</p>
+        <div class="partners-grid">
+            <div class="partner-placeholder">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="partner-placeholder">
+                <i class="fas fa-building"></i>
+            </div>
+            <div class="partner-placeholder">
+                <i class="fas fa-building"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
