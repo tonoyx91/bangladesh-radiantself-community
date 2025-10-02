@@ -67,55 +67,117 @@
             color: var(--secondary-color);
         }
 
+        /* Section Title Style */
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-top: 2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
         /* Teams Grid Styles */
         .teams-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 120px auto 40px;
             padding: 0 2rem;
         }
 
         .teams-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2rem;
         }
 
         .team-card {
             background: var(--bg-color);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.08);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .team-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
 
         .team-logo {
             width: 100%;
             height: 200px;
-            background-color: var(--accent-color);
+            background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-logo::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(26, 79, 139, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            top: 0;
+            left: 0;
         }
 
         .team-logo img {
             max-width: 80%;
             max-height: 80%;
             object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .team-logo img {
+            transform: scale(1.1);
         }
 
         .team-info {
             padding: 1.5rem;
             text-align: center;
+            background: white;
+            position: relative;
+        }
+
+        .team-info::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
         }
 
         .team-info h3 {
             color: var(--primary-color);
             margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .team-card:hover .team-info h3 {
+            color: var(--secondary-color);
         }
 
         /* Responsive Design */
@@ -157,16 +219,102 @@
     <!-- Teams Grid -->
     <div class="teams-container">
         <div class="teams-grid">
-            <!-- 12 Institution Cards -->
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="Institution 1">
+                    <img src="assets/BRC_LOGO.png" alt="DMC">
                 </div>
                 <div class="team-info">
-                    <h3>Institution 1</h3>
+                    <h3>Dhaka Medical College</h3>
                 </div>
             </div>
-            <!-- Repeat for all 12 institutions -->
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="SBMC">
+                </div>
+                <div class="team-info">
+                    <h3>Sher-e-Bangla Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="MMC">
+                </div>
+                <div class="team-info">
+                    <h3>Mymensingh Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="SOMC">
+                </div>
+                <div class="team-info">
+                    <h3>Shaheed Suhrawardy Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="JNMC">
+                </div>
+                <div class="team-info">
+                    <h3>Jamalpur Nursing & Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="SSMC">
+                </div>
+                <div class="team-info">
+                    <h3>Sir Salimullah Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="BSMMU">
+                </div>
+                <div class="team-info">
+                    <h3>Bangabandhu Sheikh Mujib Medical University</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="CMC">
+                </div>
+                <div class="team-info">
+                    <h3>Chittagong Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="RMC">
+                </div>
+                <div class="team-info">
+                    <h3>Rangpur Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="KYAMC">
+                </div>
+                <div class="team-info">
+                    <h3>Khwaja Yunus Ali Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="RpMC">
+                </div>
+                <div class="team-info">
+                    <h3>Rajshahi Medical College</h3>
+                </div>
+            </div>
+            <div class="team-card">
+                <div class="team-logo">
+                    <img src="assets/BRC_LOGO.png" alt="SZMC">
+                </div>
+                <div class="team-info">
+                    <h3>Shaheed Ziaur Rahman Medical College</h3>
+                </div>
+            </div>
         </div>
     </div>
 </body>
