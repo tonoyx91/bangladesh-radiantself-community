@@ -44,11 +44,29 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .logo img {
             height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-top {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text-bottom {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .nav-links {
@@ -162,7 +180,10 @@
         <div class="nav-content">
             <div class="logo">
                 <img src="assets/BRC_LOGO.png" alt="BRC Logo">
-                <h1>BRC</h1>
+                <div class="logo-text">
+                    <span class="logo-text-top">Bangladesh</span>
+                    <span class="logo-text-bottom">Radiantself Community</span>
+                </div>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -180,7 +201,35 @@
             <!-- Sample News Card -->
             <article class="news-card">
                 <div class="news-image">
-                    <img src="path/to/news-image.jpg" alt="News Title">
+                    <img src="assets/event-1.jpg" alt="News Title">
+                </div>
+                <div class="news-content">
+                    <div class="news-date">October 2, 2025</div>
+                    <h2 class="news-title">World Rabies Day 2025 - A Successful Collaboration</h2>
+                    <p class="news-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                    <a href="#" class="news-link">
+                        Read More
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="assets/event-2.jpg" alt="News Title">
+                </div>
+                <div class="news-content">
+                    <div class="news-date">September 2, 2025</div>
+                    <h2 class="news-title">Community Meetup Day</h2>
+                    <p class="news-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                    <a href="#" class="news-link">
+                        Read More
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="assets/event-3.jpg" alt="News Title">
                 </div>
                 <div class="news-content">
                     <div class="news-date">October 2, 2025</div>

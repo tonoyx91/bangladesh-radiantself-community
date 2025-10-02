@@ -44,11 +44,29 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .logo img {
             height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-top {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text-bottom {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .nav-links {
@@ -204,7 +222,10 @@
         <div class="nav-content">
             <div class="logo">
                 <img src="assets/BRC_LOGO.png" alt="BRC Logo">
-                <h1>BRC</h1>
+                <div class="logo-text">
+                    <span class="logo-text-top">Bangladesh</span>
+                    <span class="logo-text-bottom">Radiantself Community</span>
+                </div>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>

@@ -45,11 +45,29 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         .logo img {
             height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-top {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text-bottom {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
         }
 
         .nav-links {
@@ -121,7 +139,7 @@
         /* Activities Section */
         .activities {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            background: var(--bg-color);
         }
 
         .activities-grid {
@@ -192,7 +210,7 @@
         /* About Section */
         .about {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--accent-color) 0%, #ffffff 100%);
+            background: var(--accent-color);
         }
 
         .about-grid {
@@ -275,7 +293,7 @@
         /* Stats Section */
         .stats {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-color) 100%);
+            background: var(--accent-color);
         }
 
         .stats-container {
@@ -395,7 +413,10 @@
         <div class="nav-content">
             <div class="logo">
                 <img src="assets/BRC_LOGO.png" alt="BRC Logo">
-                <h1>BRC</h1>
+                <div class="logo-text">
+                    <span class="logo-text-top">Bangladesh</span>
+                    <span class="logo-text-bottom">Radiantself Community</span>
+                </div>
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
@@ -531,10 +552,13 @@
             </div>
             <div class="footer-section">
                 <h4>Follow Us</h4>
-                <p><a href="#">Facebook</a></p>
+                <p><a href="https://www.facebook.com/p/Bangladesh-Radiantself-Community-61577181872470/" target="_blank">Facebook</a></p>
                 <p><a href="#">Twitter</a></p>
                 <p><a href="#">LinkedIn</a></p>
             </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">
+            <p>Developed by <a href="https://github.com/tonoyx91" target="_blank" style="color: var(--secondary-color); font-weight: 500;">tonoyx91</a></p>
         </div>
     </footer>
 
