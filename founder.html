@@ -6,6 +6,7 @@
     <title>Founder & Director - BRC</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/founder.css">
     <style>
         /* Include the base styles */
         * {
@@ -175,10 +176,19 @@
 
         .founder-image {
             position: relative;
+            height: 700px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
             transition: transform 0.3s ease;
+        }
+
+        #founder-image-1{
+            height: 600px;
+        }
+
+        #founder-image-2{
+            height: 700px;
         }
 
         .founder-image:hover {
@@ -187,7 +197,9 @@
 
         .founder-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
             display: block;
         }
 
@@ -247,6 +259,37 @@
             color: var(--primary-color);
             margin-bottom: 0.5rem;
             font-weight: 600;
+        }
+
+        .founder-description {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .highlights {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(76, 175, 80, 0.1);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--primary-color);
+        }
+
+        .highlight-item i {
+            color: var(--secondary-color);
+        }
+
+        .highlight-item span {
+            font-weight: 500;
         }
 
         .social-links {
@@ -332,55 +375,77 @@
         <div class="section-header">
             <h1 class="section-title">Meet Our Founder</h1>
         </div>
+
+        <!-- First Founder -->
         <div class="founder-container">
-            <div class="founder-image">
-                <img src="assets/founder.jpg" alt="Founder's Image">
+            <div class="founder-image" id="founder-image-1">
+                <img src="assets/founder-1.jpg" alt="Founder's Image">
             </div>
-            <div class="founder-details">
-                <h2 class="founder-name">Dr. John Doe</h2>
-                <p class="founder-title">Founder & Executive Director</p>
-                <p class="founder-bio">
-                    Dr. John Doe is a distinguished researcher and visionary leader in the field of antimicrobial resistance and zoonotic diseases. With over 15 years of experience, he has dedicated his career to building bridges between academic research and community health initiatives.
-                </p>
-                <p class="founder-bio">
-                    Under his leadership, Bangladesh Radiantself Community has grown from a small local initiative to a nationally recognized organization, impacting thousands of lives through innovative health programs and community engagement.
-                </p>
-                <div class="founder-achievements">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-award"></i>
-                        </div>
-                        <h3 class="achievement-title">Research Excellence</h3>
-                        <p>Published over 50 research papers in international journals</p>
+            <div class="founder-info">
+                <div class="founder-card">
+                    <h2 class="founder-name">Founder</h2>
+                    <h3 class="founder-org">Bangladesh Radiantself Community</h3>
+                    <p class="founder-description">
+                        Leading the vision of Bangladesh Radiantself Community with dedication and innovation. 
+                        Committed to fostering positive change and community development through sustainable initiatives 
+                        and collaborative partnerships.
+                    </p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> bdradiantselfcommunity@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +8801526836942</p>
                     </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
+                    <div class="highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-star"></i>
+                            <span>Community Leadership</span>
+                        </div>
+                        <div class="highlight-item">
                             <i class="fas fa-users"></i>
+                            <span>Youth Development</span>
                         </div>
-                        <h3 class="achievement-title">Community Impact</h3>
-                        <p>Led initiatives reaching over 100,000 community members</p>
                     </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Founder -->
+        <div class="founder-container reverse">
+            <div class="founder-info">
+                <div class="founder-card">
+                    <h2 class="founder-name">Sajjad Hossain</h2>
+                    <h3 class="founder-position">Designer & Content Developer (DCC), SciSkill</h3>
+                    <h3 class="founder-org">Faculty of Animal Science and Veterinary Medicine</h3>
+                    <h3 class="founder-location">Sher-e-Bangla Agricultural University</h3>
+                    <h3 class="founder-country">Bangladesh</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> em@sciskill.org</p>
+                        <p><i class="fas fa-phone"></i> +8801940842647</p>
+                        <p><i class="fas fa-globe"></i> www.sciskill.org</p>
+                    </div>
+                    <div class="highlights">
+                        <div class="highlight-item">
                             <i class="fas fa-graduation-cap"></i>
+                            <span>Academic Excellence</span>
                         </div>
-                        <h3 class="achievement-title">Education</h3>
-                        <p>Ph.D. in Microbiology from Harvard University</p>
+                        <div class="highlight-item">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                            <span>Educational Leadership</span>
+                        </div>
                     </div>
-                    <div class="achievement-card">
-                        <div class="achievement-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3 class="achievement-title">Partnerships</h3>
-                        <p>Established collaborations with 20+ global organizations</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="social-links">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
-                </div>
+            </div>
+            <div class="founder-image" id="founder-image-2">
+                <img src="assets/founder-2.jpg" alt="Second Founder's Image">
             </div>
         </div>
     </section>

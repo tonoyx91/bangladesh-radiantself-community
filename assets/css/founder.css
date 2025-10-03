@@ -1,0 +1,160 @@
+/* Custom Properties based on logo colors */
+:root {
+    --primary-color: #006400; /* Dark Green */
+    --secondary-color: #32CD32; /* Lime Green */
+    --text-dark: #333;
+    --text-light: #666;
+    --background-light: #f5f5f5;
+    --white: #ffffff;
+}
+
+/* Founder Section Styles */
+.founder-section {
+    padding: 4rem 2rem;
+    background-color: var(--background-light);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: var(--secondary-color);
+}
+
+.founder-container {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 4rem;
+    gap: 4rem;
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.founder-container.reverse {
+    flex-direction: row-reverse;
+}
+
+.founder-image {
+    flex: 1;
+}
+
+.founder-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.founder-image img:hover {
+    transform: scale(1.02);
+}
+
+.founder-info {
+    flex: 1;
+}
+
+.founder-card {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.founder-name {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.founder-position {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.founder-org {
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info {
+    margin: 1.5rem 0;
+}
+
+.contact-info p {
+    color: var(--text-light);
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .founder-container,
+    .founder-container.reverse {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+    }
+
+    .founder-image {
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .founder-name {
+        font-size: 1.75rem;
+    }
+}
