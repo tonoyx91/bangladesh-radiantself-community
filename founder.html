@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Founder & Director - BRC</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Include the base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a4f8b;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --accent-color: #f5f5f5;
+        }
+
+        /* Navigation styles */
+        .navbar {
+            background: var(--bg-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-top {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text-bottom {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-color);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding-left: 2rem;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            padding: 8rem 2rem 6rem;
+            background: var(--bg-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .founder-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .founder-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .founder-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .founder-details {
+            padding: 2rem;
+            background: var(--accent-color);
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .founder-name {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .founder-title {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .founder-bio {
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
+
+        .founder-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .achievement-card {
+            background: var(--bg-color);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .achievement-title {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .founder-container {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-achievements {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="assets/BRC_LOGO.png" alt="BRC Logo">
+                <div class="logo-text">
+                    <span class="logo-text-top">Bangladesh</span>
+                    <span class="logo-text-bottom">Radiantself Community</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="founder.html">Founder & Director</a>
+                        <a href="advisors.html">Advisors</a>
+                        <a href="executive-teams.html">Communities</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">About Us <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Mission & Vision</a>
+                        <a href="#">Our History</a>
+                        <a href="#">Impact</a>
+                    </div>
+                </div>
+                <a href="news.html">News</a>
+                <a href="partners.html">Partners & Collaborators</a>
+                <div class="dropdown">
+                    <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Join Our Team</a>
+                        <a href="#">Support Us</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="section-header">
+            <h1 class="section-title">Meet Our Founder</h1>
+        </div>
+        <div class="founder-container">
+            <div class="founder-image">
+                <img src="assets/founder.jpg" alt="Founder's Image">
+            </div>
+            <div class="founder-details">
+                <h2 class="founder-name">Dr. John Doe</h2>
+                <p class="founder-title">Founder & Executive Director</p>
+                <p class="founder-bio">
+                    Dr. John Doe is a distinguished researcher and visionary leader in the field of antimicrobial resistance and zoonotic diseases. With over 15 years of experience, he has dedicated his career to building bridges between academic research and community health initiatives.
+                </p>
+                <p class="founder-bio">
+                    Under his leadership, Bangladesh Radiantself Community has grown from a small local initiative to a nationally recognized organization, impacting thousands of lives through innovative health programs and community engagement.
+                </p>
+                <div class="founder-achievements">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3 class="achievement-title">Research Excellence</h3>
+                        <p>Published over 50 research papers in international journals</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="achievement-title">Community Impact</h3>
+                        <p>Led initiatives reaching over 100,000 community members</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="achievement-title">Education</h3>
+                        <p>Ph.D. in Microbiology from Harvard University</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="achievement-title">Partnerships</h3>
+                        <p>Established collaborations with 20+ global organizations</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

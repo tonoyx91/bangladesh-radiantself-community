@@ -87,6 +87,53 @@
             color: var(--secondary-color);
         }
 
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-color);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding-left: 2rem;
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 80px;
@@ -174,10 +221,7 @@
             transition: transform 0.3s ease;
         }
 
-        #activity-item-2{
-            /* object-fit: contain; */
-            /* height: min-content; */
-        }
+        
 
         .activity-overlay {
             position: absolute;
@@ -421,10 +465,32 @@
             </div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="executive-teams.html">Executive Teams</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="founder.html">Founder & Director</a>
+                        <a href="advisors.html">Advisors</a>
+                        <a href="executive-teams.html">Communities</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">About Us <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Mission & Vision</a>
+                        <a href="#">Our History</a>
+                        <a href="#">Impact</a>
+                    </div>
+                </div>
                 <a href="news.html">News</a>
                 <a href="partners.html">Partners & Collaborators</a>
-                <a href="contact.html">Contact</a>
+                <div class="dropdown">
+                    <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Join Our Team</a>
+                        <a href="#">Support Us</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>

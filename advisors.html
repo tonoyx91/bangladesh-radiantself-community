@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advisors - BRC</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Include the base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a4f8b;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --accent-color: #f5f5f5;
+        }
+
+        /* Navigation styles */
+        .navbar {
+            background: var(--bg-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .logo-text-top {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .logo-text-bottom {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-color);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding-left: 2rem;
+        }
+
+        /* Advisors Section */
+        .advisors-section {
+            padding: 8rem 2rem 6rem;
+            background: var(--bg-color);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .advisors-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+        }
+
+        .advisor-card {
+            background: var(--accent-color);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .advisor-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .advisor-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .advisor-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .advisor-card:hover .advisor-image img {
+            transform: scale(1.1);
+        }
+
+        .advisor-details {
+            padding: 2rem;
+        }
+
+        .advisor-name {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .advisor-title {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .advisor-bio {
+            line-height: 1.6;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .advisor-specialties {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .specialty-tag {
+            background: var(--bg-color);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .advisor-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .advisors-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="assets/BRC_LOGO.png" alt="BRC Logo">
+                <div class="logo-text">
+                    <span class="logo-text-top">Bangladesh</span>
+                    <span class="logo-text-bottom">Radiantself Community</span>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="founder.html">Founder & Director</a>
+                        <a href="advisors.html">Advisors</a>
+                        <a href="executive-teams.html">Communities</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="dropdown-trigger">About Us <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Mission & Vision</a>
+                        <a href="#">Our History</a>
+                        <a href="#">Impact</a>
+                    </div>
+                </div>
+                <a href="news.html">News</a>
+                <a href="partners.html">Partners & Collaborators</a>
+                <div class="dropdown">
+                    <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Join Our Team</a>
+                        <a href="#">Support Us</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Advisors Section -->
+    <section class="advisors-section">
+        <div class="section-header">
+            <h1 class="section-title">Our Advisors</h1>
+        </div>
+        <div class="advisors-container">
+            <!-- Advisor 1 -->
+            <div class="advisor-card">
+                <div class="advisor-image">
+                    <img src="assets/advisor1.jpg" alt="Dr. Sarah Johnson">
+                </div>
+                <div class="advisor-details">
+                    <h2 class="advisor-name">Dr. Sarah Johnson</h2>
+                    <p class="advisor-title">Senior Research Advisor</p>
+                    <p class="advisor-bio">
+                        Dr. Sarah Johnson is a leading expert in antimicrobial resistance with over 20 years of experience in public health research and policy development. Her work has been instrumental in shaping national health policies.
+                    </p>
+                    <div class="advisor-specialties">
+                        <span class="specialty-tag">Public Health</span>
+                        <span class="specialty-tag">Research</span>
+                        <span class="specialty-tag">Policy Development</span>
+                    </div>
+                    <div class="advisor-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advisor 2 -->
+            <div class="advisor-card">
+                <div class="advisor-image">
+                    <img src="assets/advisor2.jpg" alt="Prof. Michael Chen">
+                </div>
+                <div class="advisor-details">
+                    <h2 class="advisor-name">Prof. Michael Chen</h2>
+                    <p class="advisor-title">Technical Advisor</p>
+                    <p class="advisor-bio">
+                        Professor Chen brings extensive expertise in zoonotic diseases and community health programs. His innovative approaches to disease prevention have been adopted by numerous organizations worldwide.
+                    </p>
+                    <div class="advisor-specialties">
+                        <span class="specialty-tag">Zoonotic Diseases</span>
+                        <span class="specialty-tag">Community Health</span>
+                        <span class="specialty-tag">Disease Prevention</span>
+                    </div>
+                    <div class="advisor-social">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
