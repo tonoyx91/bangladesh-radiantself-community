@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangladesh Radiantself Community</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and base styles */
@@ -161,6 +161,42 @@
 
         .slide.active {
             opacity: 1;
+        }
+
+        .hero-motto-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 1.5rem;
+            overflow: hidden;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .hero-span{
+            color: #ff3333;
+        }
+
+        .hero-motto {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            line-height: 1.6;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .hero-motto marquee {
+            width: 100%;
+        }
+
+        .hero-motto .emoji {
+            margin: 0 0.5rem;
+            font-size: 1.8rem;
+            vertical-align: middle;
         }
 
         /* Section Title Style */
@@ -457,7 +493,7 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <img src="assets/BRC_LOGO.png" alt="BRC Logo">
+                <img src="./assets/images/BRC_LOGO.png" alt="BRC Logo">
                 <div class="logo-text">
                     <span class="logo-text-top">Bangladesh</span>
                     <span class="logo-text-bottom">Radiantself Community</span>
@@ -468,9 +504,9 @@
                 <div class="dropdown">
                     <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="founder.html">Founder & Director</a>
-                        <a href="advisors.html">Advisors</a>
-                        <a href="executive-teams.html">Communities</a>
+                        <a href="pages/founder.html">Founder & Director</a>
+                        <a href="pages/advisors.html">Advisors</a>
+                        <a href="pages/executive-teams.html">Communities</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -481,10 +517,10 @@
                         <a href="#">Impact</a>
                     </div>
                 </div>
-                <a href="news.html">News</a>
-                <a href="partners.html">Partners & Collaborators</a>
+                <a href="pages/news.html">News</a>
+                <a href="pages/partners.html">Partners & Collaborators</a>
                 <div class="dropdown">
-                    <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
+                    <a href="pages/contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#">Join Our Team</a>
                         <a href="#">Support Us</a>
@@ -498,9 +534,24 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="slider">
-            <img src="assets/front1.jpg" alt="BRC Image 1" class="slide">
-            <img src="assets/front2.jpg" alt="BRC Image 2" class="slide">
-            <img src="assets/front3.jpg" alt="BRC Image 3" class="slide">
+            <img src="./assets/images/front1.jpg" alt="BRC Image 1" class="slide">
+            <img src="./assets/images/front2.jpg" alt="BRC Image 2" class="slide">
+            <img src="./assets/images/front3.jpg" alt="BRC Image 3" class="slide">
+        </div>
+        <div class="hero-motto-container">
+            <div class="hero-motto">
+                <marquee behavior="scroll" direction="left" scrollamount="12" loop="infinite">
+                    BRC envisions a world where youth lead the fight against <span class="hero-span">AMR</span> and <span class="hero-span">zoonotic</span> threats through behavioral change, community awareness, and cross-sector collaboration
+                    <span class="emoji">💊</span>
+                    <span class="emoji">☘</span>
+                    <span class="emoji">🌎</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    BRC envisions a world where youth lead the fight against <span class="hero-span">AMR</span> and <span class="hero-span">zoonotic</span> threats through behavioral change, community awareness, and cross-sector collaboration
+                    <span class="emoji">💊</span>
+                    <span class="emoji">☘</span>
+                    <span class="emoji">🌎</span>
+                </marquee>
+            </div>
         </div>
     </section>
 
@@ -525,8 +576,8 @@
                 </div>
             </div>
             <div class="about-images">
-                <img src="assets/about-1.jpg" alt="BRC Activity 1" class="about-img">
-                <img src="assets/about-2.jpg" alt="BRC Activity 2" class="about-img">
+                <img src="./assets/images/about-1.jpg" alt="BRC Activity 1" class="about-img">
+                <img src="./assets/images/about-2.jpg" alt="BRC Activity 2" class="about-img">
             </div>
         </div>
     </section>
@@ -536,37 +587,37 @@
         <h2 class="section-title">Our Activities</h2>
         <div class="activities-grid">
             <div class="activity-item large">
-                <img src="assets/activity1.jpg" alt="Activity 1">
+                <img src="./assets/images/activity1.jpg" alt="Activity 1">
                 <div class="activity-overlay">
                     <h3>Community Outreach</h3>
                 </div>
             </div>
             <div class="activity-item" id="activity-item-2">
-                <img src="assets/activity2.jpg" alt="Activity 2">
+                <img src="./assets/images/activity2.jpg" alt="Activity 2">
                 <div class="activity-overlay">
                     <!-- <h3>Health Camps</h3> -->
                 </div>
             </div>
             <div class="activity-item">
-                <img src="assets/activity3.jpg" alt="Activity 3">
+                <img src="./assets/images/activity3.jpg" alt="Activity 3">
                 <div class="activity-overlay">
                     <!-- <h3>Youth Training</h3> -->
                 </div>
             </div>
             <div class="activity-item">
-                <img src="assets/activity4.jpg" alt="Activity 4">
+                <img src="./assets/images/activity4.jpg" alt="Activity 4">
                 <div class="activity-overlay">
                     <!-- <h3>Awareness Programs</h3> -->
                 </div>
             </div>
             <div class="activity-item">
-                <img src="assets/activity5.jpg" alt="Activity 5">
+                <img src="./assets/images/activity5.jpg" alt="Activity 5">
                 <div class="activity-overlay">
                     <!-- <h3>Research Projects</h3> -->
                 </div>
             </div>
             <div class="activity-item">
-                <img src="assets/activity6.jpg" alt="Activity 6">
+                <img src="./assets/images/activity6.jpg" alt="Activity 6">
                 <div class="activity-overlay">
                     <!-- <h3>Collaborations</h3> -->
                 </div>
@@ -596,7 +647,7 @@
                     </div>
                 </div>
                 <div class="stats-image">
-                    <img src="assets/community.jpg" alt="BRC Community" class="stats-img">
+                    <img src="./assets/images/community.jpg" alt="BRC Community" class="stats-img">
                 </div>
             </div>
         </div>
@@ -613,9 +664,9 @@
             </div>
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <p><a href="executive-teams.html">Executive Teams</a></p>
-                <p><a href="news.html">News</a></p>
-                <p><a href="partners.html">Partners</a></p>
+                <p><a href="pages/executive-teams.html">Executive Teams</a></p>
+                <p><a href="pages/news.html">News</a></p>
+                <p><a href="pages/partners.html">Partners</a></p>
             </div>
             <div class="footer-section">
                 <h4>Follow Us</h4>

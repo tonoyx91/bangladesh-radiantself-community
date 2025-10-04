@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Executive Teams - BRC</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>BRC Communities - Medical College Chapters</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Include the same base styles as index.html */
@@ -86,6 +86,53 @@
             color: var(--secondary-color);
         }
 
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--bg-color);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            z-index: 1001;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 0.8rem 1.5rem;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding-left: 2rem;
+        }
+
         /* Section Title Style */
         .section-title {
             text-align: center;
@@ -106,6 +153,19 @@
             height: 4px;
             background: var(--secondary-color);
             border-radius: 2px;
+        }
+
+        .section-description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .section-description p {
+            margin-bottom: 1rem;
         }
 
         /* Teams Grid Styles */
@@ -222,14 +282,14 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">
-                <img src="assets/BRC_LOGO.png" alt="BRC Logo">
+                <img src="../assets/images/BRC_LOGO.png" alt="BRC Logo">
                 <div class="logo-text">
                     <span class="logo-text-top">Bangladesh</span>
                     <span class="logo-text-bottom">Radiantself Community</span>
                 </div>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
                 <div class="dropdown">
                     <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
@@ -262,10 +322,14 @@
 
     <!-- Teams Grid -->
     <div class="teams-container">
+        <h1 class="section-title">Our Communities</h1>
+        <div class="section-description">
+            <p>Bangladesh Radiantself Community (BRC) is proud to have active chapters across major medical institutions in Bangladesh. Each community contributes to our mission of fighting AMR and zoonotic threats through research, awareness, and action.</p>
+        </div>
         <div class="teams-grid">
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="DMC">
+                    <img src="../assets/images//BRC_LOGO.png" alt="DMC">
                 </div>
                 <div class="team-info">
                     <h3>Dhaka Medical College</h3>
@@ -273,7 +337,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="SBMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="SBMC">
                 </div>
                 <div class="team-info">
                     <h3>Sher-e-Bangla Medical College</h3>
@@ -281,7 +345,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="MMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="MMC">
                 </div>
                 <div class="team-info">
                     <h3>Mymensingh Medical College</h3>
@@ -289,7 +353,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="SOMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="SOMC">
                 </div>
                 <div class="team-info">
                     <h3>Shaheed Suhrawardy Medical College</h3>
@@ -297,7 +361,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="JNMC">
+                    <img src="../assets/images//BRC_LOGO.png" alt="JNMC">
                 </div>
                 <div class="team-info">
                     <h3>Jamalpur Nursing & Medical College</h3>
@@ -305,7 +369,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="SSMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="SSMC">
                 </div>
                 <div class="team-info">
                     <h3>Sir Salimullah Medical College</h3>
@@ -313,7 +377,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="BSMMU">
+                    <img src="../assets/images/BRC_LOGO.png" alt="BSMMU">
                 </div>
                 <div class="team-info">
                     <h3>Bangabandhu Sheikh Mujib Medical University</h3>
@@ -321,7 +385,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="CMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="CMC">
                 </div>
                 <div class="team-info">
                     <h3>Chittagong Medical College</h3>
@@ -329,7 +393,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="RMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="RMC">
                 </div>
                 <div class="team-info">
                     <h3>Rangpur Medical College</h3>
@@ -337,7 +401,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="KYAMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="KYAMC">
                 </div>
                 <div class="team-info">
                     <h3>Khwaja Yunus Ali Medical College</h3>
@@ -345,7 +409,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="RpMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="RpMC">
                 </div>
                 <div class="team-info">
                     <h3>Rajshahi Medical College</h3>
@@ -353,7 +417,7 @@
             </div>
             <div class="team-card">
                 <div class="team-logo">
-                    <img src="assets/BRC_LOGO.png" alt="SZMC">
+                    <img src="../assets/images/BRC_LOGO.png" alt="SZMC">
                 </div>
                 <div class="team-info">
                     <h3>Shaheed Ziaur Rahman Medical College</h3>
