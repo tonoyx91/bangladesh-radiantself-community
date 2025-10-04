@@ -54,7 +54,7 @@
         }
 
         /* News Section */ewport" content="width=device-width, initial-scale=1.0">
-    <title>News - BRC</title>
+    <title>Press & Events - BRC</title>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -184,35 +184,56 @@
             padding-left: 2rem;
         }
 
-        /* News Styles */
+        /* Press & Events Styles */
         .news-container {
             max-width: 1200px;
             margin: 120px auto 40px;
             padding: 0 2rem;
         }
 
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
         .news-grid {
             display: grid;
             gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .news-card {
             background: var(--bg-color);
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .news-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
 
         .news-image {
             height: 300px;
-            background-color: var(--accent-color);
+            position: relative;
             overflow: hidden;
         }
 
@@ -220,6 +241,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.05);
         }
 
         .news-content {
@@ -229,32 +255,95 @@
         .news-date {
             color: var(--secondary-color);
             font-size: 0.9rem;
+            font-weight: 500;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .news-title {
             color: var(--primary-color);
             font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-title i {
+            transition: transform 0.3s ease;
+        }
+
+        .news-title.active i {
+            transform: rotate(180deg);
+        }
+
+        .news-details {
+            color: var(--text-color);
+            line-height: 1.8;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+            opacity: 0;
+        }
+
+        .news-details.active {
+            max-height: 2000px;
+            opacity: 1;
+            margin-top: 1rem;
+        }
+
+        .news-details p {
             margin-bottom: 1rem;
         }
 
-        .news-excerpt {
-            color: var(--text-color);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .news-link {
+        .hashtags {
+            margin-top: 1rem;
             color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.9rem;
         }
 
-        .news-link:hover {
-            text-decoration: underline;
+        @media (max-width: 768px) {
+            .news-container {
+                padding: 0 1rem;
+            }
+
+            .news-image {
+                height: 200px;
+            }
+        }
+
+
+         /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--bg-color);
+            text-decoration: none;
         }
 
         /* Responsive Design */
@@ -302,7 +391,7 @@
                         <a href="#">Impact</a>
                     </div>
                 </div>
-                <a href="news.html">News</a>
+                <a href="news.html">Press</a>
                 <a href="partners.html">Partners & Collaborators</a>
                 <div class="dropdown">
                     <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
@@ -316,54 +405,162 @@
         </div>
     </nav>
 
-    <!-- News Grid -->
+    <!-- Press & Events Grid -->
     <div class="news-container">
+        <h1 class="section-title">Press & Events</h1>
         <div class="news-grid">
-            <!-- Sample News Card -->
             <article class="news-card">
                 <div class="news-image">
-                    <img src="../assets/images/event-1.jpg" alt="News Title">
+                    <img src="../assets/press/event-1.jpg" alt="World Rabies Day 2025">
                 </div>
                 <div class="news-content">
-                    <div class="news-date">October 2, 2025</div>
-                    <h2 class="news-title">World Rabies Day 2025 - A Successful Collaboration</h2>
-                    <p class="news-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="news-link">
-                        Read More
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        September 25, 2025
+                    </div>
+                    <h2 class="news-title" onclick="toggleDetails(this)">
+                        World Rabies Day 2025 - A Successful Collaboration!
+                        <i class="fas fa-chevron-down"></i>
+                    </h2>
+                    <div class="news-details">
+                        <p>We are thrilled to share the success of the <strong>World Rabies Day</strong> event, held on 25th September at Sher-e-Bangla Agricultural University. This amazing event was made possible through the incredible partnership of PHARMA & FIRM, #MSD & #Bengle Overseas Ltd. and #BRC_SAU. A special shout-out to Dr. Samia Khan for her outstanding collaboration in making this event a reality.</p>
+                        <p>The day started with a rally, followed by the inaugural speech and the vaccination campaign launch by the Vice Chancellor, Prof. Dr. Abdul Latif & Faculty Dean Prof. Dr. Jahangir, Sher-e-Bangla Agricultural University. Early in the morning, volunteers were already on the ground, tirelessly vaccinating stray dogs under the guidance of Dr. Rup Kumar. A dedicated team of 100 volunteers worked hard throughout the day, demonstrating commitment and care.</p>
+                        <p>A heartfelt thanks to Advisors Mahmudul Hasan Sikder sir for swiftly securing sponsors for the event T-shirts, and Khalil Ibrahim Sir for excellent direction throughout. After a day of hard work, the volunteers were treated to snacks as a token of appreciation.</p>
+                        <div class="hashtags">
+                            #RabiesDay2025 #CommunityCare #PublicHealth #BRC #GRC
+                        </div>
+                    </div>
                 </div>
             </article>
+
             <article class="news-card">
                 <div class="news-image">
-                    <img src="../assets/images/event-2.jpg" alt="News Title">
+                    <img src="../assets/press/event-3.jpg" alt="Scientific Paper Writing Course">
                 </div>
                 <div class="news-content">
-                    <div class="news-date">September 2, 2025</div>
-                    <h2 class="news-title">Community Meetup Day</h2>
-                    <p class="news-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="news-link">
-                        Read More
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        August 14 - September 12, 2025
+                    </div>
+                    <h2 class="news-title" onclick="toggleDetails(this)">
+                        BRC-SciSkill Course on Scientific Paper Writing & Publication
+                        <i class="fas fa-chevron-down"></i>
+                    </h2>
+                    <div class="news-details">
+                        <p><strong>Course Details:</strong></p>
+                        <p>📅 Start Date: August 14, 2025 (Thursday)<br>
+                        📆 End Date: September 12, 2025 (Friday)<br>
+                        📌 Weekly Schedule: Every Thursday & Friday<br>
+                        ✈️ Total course hours: 30+<br>
+                        ✅ Time: 8:00 PM – 11:00 PM with Breaks<br>
+                        🔍 Platform: Zoom</p>
+                        <p><strong>Trainer:</strong><br>
+                        Dr. Abu Sayed<br>
+                        DVM (PSTU, Bangladesh); CLT (CAAS, China)<br>
+                        Erasmus Mundus Scholar<br>
+                        MSc Candidate in Vaccinology (LIVE)</p>
+                        <p><strong>Course Fee:</strong> 1200 BD Taka</p>
+                        <p><strong>Registration Deadline:</strong> August 10, 2025</p>
+                        <p>For registration and queries:<br>
+                        Email: sajjadsau.asvm@gmail.com<br>
+                        Phone: 01940842647</p>
+                        <div class="hashtags">
+                            #BRC_Research_Wing #ScientificWriting #Research #Academia
+                        </div>
+                    </div>
                 </div>
             </article>
+
             <article class="news-card">
                 <div class="news-image">
-                    <img src="../assets/images/event-3.jpg" alt="News Title">
+                    <img src="../assets/press/event-4.jpg" alt="BRC Membership Registration">
                 </div>
                 <div class="news-content">
-                    <div class="news-date">October 2, 2025</div>
-                    <h2 class="news-title">World Rabies Day 2025 - A Successful Collaboration</h2>
-                    <p class="news-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                    <a href="#" class="news-link">
-                        Read More
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        Registration Deadline: August 25, 2025
+                    </div>
+                    <h2 class="news-title" onclick="toggleDetails(this)">
+                        BRC Membership Registration
+                        <i class="fas fa-chevron-down"></i>
+                    </h2>
+                    <div class="news-details">
+                        <p>Register before August 25, 2025</p>
+                        <p><strong>Registration Fee:</strong> 700 BDT (Only for BRC Members)</p>
+                        <p><strong>Important Note:</strong> Write BRC after your name within first bracket.<br>
+                        Example: Akil Hossain (BRC)</p>
+                        <div class="hashtags">
+                            #BRC_Research_Wing #BRC #GRC
+                        </div>
+                    </div>
                 </div>
             </article>
-            <!-- Add more news cards as needed -->
+
+
+            <article class="news-card">
+                <div class="news-image">
+                    <img src="../assets/press/event-2.jpg" alt="World Zoonoses Day 2025">
+                </div>
+                <div class="news-content">
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        July 6, 2025
+                    </div>
+                    <h2 class="news-title" onclick="toggleDetails(this)">
+                        International Webinar On World Zoonoses Day 2025
+                        <i class="fas fa-chevron-down"></i>
+                    </h2>
+                    <div class="news-details">
+                        <p>We, the Bangladesh Radiantself Community, are thrilled to announce the successful completion of our International Webinar on the occasion of World Zoonoses Day 2025! 🌍</p>
+                        <p>With over 250 live viewers and 114 registered participants, this event was an inspiring gathering of global minds, all united to raise awareness and share knowledge on zoonotic diseases — an issue more relevant now than ever.</p>
+                        <p><strong>A Heartfelt Thank You To:</strong><br>
+                        Our esteemed speakers for sharing their invaluable insights and expertise,<br>
+                        The enthusiastic participants for their active engagement,<br>
+                        And our dedicated organizing team whose tireless effort made this event a true success.</p>
+                        <p>Stay tuned for more updates, insights, and certificates for the event. Don't need to reach out, we'll provide these soon.</p>
+                        <div class="hashtags">
+                            #WorldZoonosesDay2025 #BangladeshRadiantselfCommunity #WebinarHighlights #GlobalHealth #ZoonoticAwareness
+                        </div>
+                    </div>
+                </div>
+            </article>
         </div>
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Agargaon, Dhaka-1207, Bangladesh</p>
+                <p>📞 01576-904642</p>
+                <p>✉️ bdradiantselfcommunity@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="executive-teams.html">Executive Teams</a></p>
+                <!-- <p><a href="pages/news.html">News</a></p> -->
+                <p><a href="partners.html">Partners</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="https://www.facebook.com/p/Bangladesh-Radiantself-Community-61577181872470/" target="_blank">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">
+            <p>Developed by <a href="https://github.com/tonoyx91" target="_blank" style="color: var(--secondary-color); font-weight: 500;">tonoyx91</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDetails(titleElement) {
+            const details = titleElement.nextElementSibling;
+            titleElement.classList.toggle('active');
+            details.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

@@ -192,32 +192,164 @@
             text-align: center;
         }
 
-        .partners-container h1 {
+        .section-title {
             color: var(--primary-color);
-            margin-bottom: 2rem;
             font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-message {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 2rem auto 4rem;
         }
 
         .partners-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            padding: 2rem 0;
+            margin-top: 2rem;
         }
 
-        .partner-placeholder {
-            background: var(--accent-color);
-            border-radius: 10px;
+        .partner-card {
+            background: var(--bg-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .partner-logo {
+            width: 200px;
+            height: 120px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 200px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
         }
 
-        .partner-placeholder i {
-            font-size: 3rem;
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo img {
+            transform: scale(1.05);
+        }
+
+        .partner-name {
             color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+        }
+
+        .partner-type {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .partner-section {
+            margin-top: 4rem;
+        }
+
+        .partner-section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        .partner-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+         /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--bg-color);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-message {
+                font-size: 1.1rem;
+                margin: 2rem auto 3rem;
+            }
         }
     </style>
 </head>
@@ -233,7 +365,7 @@
                 </div>
             </div>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="../index.html">Home</a>
                 <div class="dropdown">
                     <a href="#" class="dropdown-trigger">Executive Body <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
@@ -242,15 +374,15 @@
                         <a href="executive-teams.html">Communities</a>
                     </div>
                 </div>
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <a href="#" class="dropdown-trigger">About Us <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#">Mission & Vision</a>
                         <a href="#">Our History</a>
                         <a href="#">Impact</a>
                     </div>
-                </div>
-                <!-- <a href="news.html">News</a> -->
+                </div> -->
+                <a href="news.html">Press</a>
                 <a href="partners.html">Partners & Collaborators</a>
                 <div class="dropdown">
                     <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
@@ -266,19 +398,106 @@
 
     <!-- Partners Content -->
     <div class="partners-container">
-        <h1>Our Partners & Collaborators</h1>
-        <p>Partner logos and information coming soon</p>
-        <div class="partners-grid">
-            <div class="partner-placeholder">
-                <i class="fas fa-building"></i>
+        <h1 class="section-title">Our Partners & Collaborators</h1>
+        <p class="section-message">
+            Together we're stronger! We extend our heartfelt gratitude to our esteemed partners and collaborators 
+            who share our vision of building a healthier future through research, education, and community action. 
+            Your unwavering support enables us to create lasting impact in public health and veterinary science.
+        </p>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">International Organizations</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-1.jpg" alt="IVSA">
+                    </div>
+                    <h3 class="partner-name">International Veterinary Students' Association</h3>
+                    <!-- <span class="partner-type">Global Partner</span> -->
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-2.jpg" alt="IAAS">
+                    </div>
+                    <h3 class="partner-name">International Association of Agriculture Students</h3>
+                    <!-- <span class="partner-type">Research Partner</span> -->
+                </div>
             </div>
-            <div class="partner-placeholder">
-                <i class="fas fa-building"></i>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Healthcare Initiatives</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-3.jpg" alt="One Health">
+                    </div>
+                    <h3 class="partner-name">One Health Bangladesh</h3>
+                    <!-- <span class="partner-type">Strategic Partner</span> -->
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-4.jpg" alt="One Health Barishal">
+                    </div>
+                    <h3 class="partner-name">One Health Barishal Team</h3>
+                    <!-- <span class="partner-type">Regional Partner</span> -->
+                </div>
             </div>
-            <div class="partner-placeholder">
-                <i class="fas fa-building"></i>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Corporate Supporters</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-5.jpg" alt="Pharma & Firm">
+                    </div>
+                    <h3 class="partner-name">Pharma & Firm</h3>
+                    <!-- <span class="partner-type">Corporate Sponsor</span> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Youth & Education</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/sponsors/c-6.jpg" alt="NOHYSB">
+                    </div>
+                    <h3 class="partner-name">National One Health Youth Symposium Bangladesh</h3>
+                    <!-- <span class="partner-type">Event Partner</span> -->
+                </div>
             </div>
         </div>
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Agargaon, Dhaka-1207, Bangladesh</p>
+                <p>📞 01576-904642</p>
+                <p>✉️ bdradiantselfcommunity@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="executive-teams.html">Executive Teams</a></p>
+                <!-- <p><a href="pages/news.html">News</a></p> -->
+                <p><a href="partners.html">Partners</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="https://www.facebook.com/p/Bangladesh-Radiantself-Community-61577181872470/" target="_blank">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">
+            <p>Developed by <a href="https://github.com/tonoyx91" target="_blank" style="color: var(--secondary-color); font-weight: 500;">tonoyx91</a></p>
+        </div>
+    </footer>
 </body>
 </html>

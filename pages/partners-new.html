@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners & Collaborators - BRC</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-color: #1a4f8b;
+            --secondary-color: #4CAF50;
+            --text-color: #333;
+            --bg-color: #fff;
+            --accent-color: #f5f5f5;
+        }
+
+        .navbar {
+            background: var(--bg-color);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* [Previous navigation styles remain the same] */
+
+        .partners-container {
+            max-width: 1200px;
+            margin: 120px auto 40px;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-message {
+            color: var(--text-color);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 2rem auto 4rem;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: var(--bg-color);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .partner-logo {
+            width: 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--accent-color);
+            border-radius: 10px;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover .partner-logo img {
+            transform: scale(1.05);
+        }
+
+        .partner-name {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+        }
+
+        .partner-type {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .partner-section {
+            margin-top: 4rem;
+        }
+
+        .partner-section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+
+        .partner-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-message {
+                font-size: 1.1rem;
+                margin: 2rem auto 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation [Previous navigation structure remains the same] -->
+
+    <!-- Partners Content -->
+    <div class="partners-container">
+        <h1 class="section-title">Our Partners & Collaborators</h1>
+        <p class="section-message">
+            Together we're stronger! We extend our heartfelt gratitude to our esteemed partners and collaborators 
+            who share our vision of building a healthier future through research, education, and community action. 
+            Your unwavering support enables us to create lasting impact in public health and veterinary science.
+        </p>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">International Organizations</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/ivsa-logo.jpg" alt="IVSA">
+                    </div>
+                    <h3 class="partner-name">International Veterinary Students' Association</h3>
+                    <span class="partner-type">Global Partner</span>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/iaas-logo.jpg" alt="IAAS">
+                    </div>
+                    <h3 class="partner-name">International Association of Agriculture Students</h3>
+                    <span class="partner-type">Research Partner</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Healthcare Initiatives</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/one-health.jpg" alt="One Health">
+                    </div>
+                    <h3 class="partner-name">One Health Bangladesh</h3>
+                    <span class="partner-type">Strategic Partner</span>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/one-health-barishal.jpg" alt="One Health Barishal">
+                    </div>
+                    <h3 class="partner-name">One Health Barishal Team</h3>
+                    <span class="partner-type">Regional Partner</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Corporate Supporters</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/pharma-firm.jpg" alt="Pharma & Firm">
+                    </div>
+                    <h3 class="partner-name">Pharma & Firm</h3>
+                    <span class="partner-type">Corporate Sponsor</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="partner-section">
+            <h2 class="partner-section-title">Youth & Education</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="../assets/images/nohysb.jpg" alt="NOHYSB">
+                    </div>
+                    <h3 class="partner-name">National One Health Youth Symposium Bangladesh</h3>
+                    <span class="partner-type">Event Partner</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

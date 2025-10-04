@@ -333,6 +333,35 @@
             pointer-events: none;
         }
 
+
+         /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: var(--bg-color);
+            text-decoration: none;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
@@ -367,15 +396,15 @@
                         <a href="executive-teams.html">Communities</a>
                     </div>
                 </div>
-                <div class="dropdown">
+                <!-- <div class="dropdown">
                     <a href="#" class="dropdown-trigger">About Us <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="#">Mission & Vision</a>
                         <a href="#">Our History</a>
                         <a href="#">Impact</a>
                     </div>
-                </div>
-                <!-- <a href="news.html">News</a> -->
+                </div> -->
+                <a href="news.html">press</a>
                 <a href="partners.html">Partners & Collaborators</a>
                 <div class="dropdown">
                     <a href="contact.html" class="dropdown-trigger">Contact <i class="fas fa-chevron-down"></i></a>
@@ -446,6 +475,34 @@
             <div id="result"></div>
         </div>
     </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📍 Agargaon, Dhaka-1207, Bangladesh</p>
+                <p>📞 01576-904642</p>
+                <p>✉️ bdradiantselfcommunity@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <p><a href="executive-teams.html">Executive Teams</a></p>
+                <!-- <p><a href="pages/news.html">News</a></p> -->
+                <p><a href="partners.html">Partners</a></p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="https://www.facebook.com/p/Bangladesh-Radiantself-Community-61577181872470/" target="_blank">Facebook</a></p>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">LinkedIn</a></p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem;">
+            <p>Developed by <a href="https://github.com/tonoyx91" target="_blank" style="color: var(--secondary-color); font-weight: 500;">tonoyx91</a></p>
+        </div>
+    </footer>
 
     <script>
         const form = document.getElementById('form');
